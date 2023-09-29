@@ -12,11 +12,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBooks(): void{
-    this.http.get<any>('https://gutendex.com/books/').pipe(
+  getAllBooks(){
+  return this.http.get<any>('https://gutendex.com/books/').pipe(
       tap(data => console.log(data)),
       map(data => data.results),
-      tap(books => console.log(books)))
+      tap(books => console.log(books))
+      )
       // .subscribe(characters => this.allCharacters.next(characters));
   }
 
