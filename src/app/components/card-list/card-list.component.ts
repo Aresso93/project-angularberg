@@ -14,6 +14,8 @@ export class CardListComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log('HADOKEN');
+    
     this.dataServ.getAllBooks().subscribe(bookArray => {
       this.books = bookArray;
       console.log(bookArray);
